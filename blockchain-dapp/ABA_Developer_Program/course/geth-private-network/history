@@ -1,0 +1,25 @@
+eth.accounts
+eth.getBalance(eth.accounts[0])
+miner.start()
+miner.stop()
+eth.getBalance(eth.accounts[0])
+eth.coinbase
+eth.accounts[0]
+eth.defaultAccount
+web3.eth.defaultAccount
+eth.sendTransaction({to: eth.accounts[1], from: eth.accounts[0], value: 100})
+eth.getBalance(eth.accounts[0])
+eth.getBalance(eth.accounts[1])
+miner.start()
+miner.stop()
+eth.getBalance(eth.accounts[1])
+eth.getBalance(eth.accounts[0])
+miner.start()
+miner.stop()
+eth.getBalance(eth.accounts[1])
+eth.getBalance(eth.accounts[0])
+miner.start()
+miner.stop()
+eth.getBalance(eth.accounts[0])
+eth.getBalance(eth.accounts[1])
+exit()

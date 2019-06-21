@@ -1,0 +1,8 @@
+namespace org.acme.airline.sample
+
+
+asset Sth identified by id {
+  o String id
+  
+}
+

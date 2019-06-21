@@ -1,0 +1,9 @@
+
+query AllFlights {
+  description: "PUT SOME DESCRIPTION OVER HERE"
+  statement: 
+  SELECT org.acme.airline.flight.Flight
+  WHERE (route.origin == _$origin_airport AND route.destination == _$destination_airport)
+  LIMIT _$limit
+  SKIP _$skip
+}

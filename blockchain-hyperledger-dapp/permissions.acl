@@ -1,0 +1,32 @@
+
+// SPECIFY ALL SIMPLE RULES HERE
+
+rule NetworkControlPermission {
+  description: "Give admin ALL access to system resources"
+  participant: "org.hyperledger.composer.system.NetworkAdmin"
+  operation: ALL
+  resource: "org.hyperledger.composer.system.*"
+  action: ALLOW
+}
+
+rule ParticipantRegistryControlPermission {
+  description: "Give admin ALL access to participant types"
+  participant: "org.hyperledger.composer.system.NetworkAdmin"
+  operation: CREATE, READ, UPDATE, DELETE
+  resource: "org.acme.airline.participant.*"
+  action: ALLOW
+}
+
+
+// SPECIFY ALL COMPLEX / CONDITIONAL RULES HERE
+
+rule ParticipantRegistryControlPermission {
+  description: "Give ACME Personnel CREATE access to execute CreateFlight transaction"
+  participant: "org.acme.airline.participant.ACMEPersonnel"
+  operation: CREATE
+  resource: "org.acme.airline.flight.*"
+  transaction: "org.acme.airline.flight.CreateFlight"
+  condition: true // OR evaluateAccess(r, p)
+  action: ALLOW
+}
+
