@@ -14,8 +14,8 @@ before((done) => {
     });
 });
 
-describe('PUT STH HERE', () => {
-    it('Test Case', () => { // EXEC STH
+describe('Sample Tests Domain', () => {
+    it('Sample Test Case', () => { // EXEC STH
         let registry = {};
         return businessNetworkConnection.getAssetRegistry(ns + "." + resourceName).then(reg => {
             regsitry = reg;
@@ -31,7 +31,7 @@ describe('PUT STH HERE', () => {
     });
 });
 
-describe('TEST CASES FOR "CreateFlight" TRANSACTION\'s CHAIN CODE', () => {
+describe('Testing "CreateFlight" Transation', () => {
     var transactionName = 'CreateFlight', assetName = 'SOME ASSET NAME';
     it('should create & retrieve 1 Flight instance', () => {
         const factory = bnaDefinition.getFactory();
