@@ -1,7 +1,7 @@
 namespace org.acme.airline.sample
 
 
-asset Sth identified by id {
+asset Sample identified by id {
   o String id
   
 }
