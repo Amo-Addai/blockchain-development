@@ -1,0 +1,74 @@
+
+- Install tools
+
+npm install -g truffle;
+npm install -g ganache-cli;
+npm install @openzeppelin/contracts;
+
+- create base directory
+mkdir baseDir/ && cd baseDir
+
+- Init Truffle
+truffle init
+
+- Add all contracts.sol files to contracts/ & migration scripts to migrations/
+
+- Configure Networks in truffle-config.js
+
+
+- Set env vars in .env
+PRIVATE_KEY=your-wallet-private-key
+INFURA_API_KEY=your-infura-api-key
+
+- Install required dependencies for HDWalletProvider and dotenv:
+npm install @truffle/hdwallet-provider dotenv
+
+- Compile and Deploy
+
+- Start Ganache CLI
+ganache-cli [--port 8545 --networkId 5777]
+
+- Compile the Smart contracts
+truffle compile
+
+- Deploy to Local Development Network
+truffle migrate --network development
+
+- Or, Clean Deployment
+truffle migrate --reset --network development
+- this will clean build artifacts (in build/), recompile contracts, then re-deploy
+
+- Deploy to Testnets
+truffle migrate --network ropsten / goerli / mumbai / ..
+
+- Verify Deployment
+
+- Interact with Deployed Contract
+truffle console --network development
+
+Eg:
+
+`
+let instance = await EcoToken.deployed();
+let name = await instance.name(); // "EcoToken"
+let balance = await instance.balanceOf("0xYourAddress");
+console.log(balance.toString());
+`
+
+- Verify on Testnet Block Explorer
+
+- Install the plugin
+npm install -g truffle-plugin-verify
+
+- Add the plugin to truffle-config.js
+
+`
+plugins: ["truffle-plugin-verify"],
+api_keys: {
+  etherscan: "your-etherscan-api-key",
+},
+`
+
+- Verify the contract
+truffle run verify EcoToken --network ropsten
+
