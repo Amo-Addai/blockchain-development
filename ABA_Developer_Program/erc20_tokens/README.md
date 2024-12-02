@@ -1,4 +1,5 @@
 
+
 Take home exercise: (copy out the following exercise to work on and send to email address provided. 
 Answer should be sent no later than 48 hours after your application) 
 
