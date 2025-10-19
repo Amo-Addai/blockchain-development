@@ -23,5 +23,7 @@ func (ws *WalletServer) Index(w.http.ResponseWriter, req *http.Request) {
 
 func (ws *WalletServer) Run() {
 	http.HandleFunc("/", ws.Index)
+	http.HandleFunc("/wallet", ws.Wallet)
+	http.HandleFunc("/transaction", ws.CreateTransaction)
 	log.Fatal(http.ListenAndServe("0.0.0.0:" + strconv.Itoa(int(ws,Port))))
 }
