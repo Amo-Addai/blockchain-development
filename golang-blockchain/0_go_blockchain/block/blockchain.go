@@ -37,6 +37,23 @@ func (b *Block) Hash() string {
 // ----------------------------------------------------------------------------
 
 
+func (bc *Blockchain) ValidProof(nonce int, previousHash [32]byte, transactions []*Transaction) bool {
+	zeros := strings.Repeat("0", difficulty)
+	guessBlock := Block{ 0, nonce, previousHash, transactions }
+	guessHashStr := fmt.Sprintf("%x", guessBlock.Hash())
+	return guessHashStr[:difficulty] == zeros
+}
+
+func (bc *Blockchain) ProofOfWork() int {
+	transactions := bc.CopyTransactionPool()
+	previousHash := bc.LastBlock().Hash()
+	nonce := 0
+	for !bc.ValidProof(nonce, previousHash, transactions, MINING_DIFFICULTY) {
+		nonce += 1
+	}
+	return nonce
+}
+
 func (bc *Blockchain) Mining() bool {
 	bc.AddTransaction(MINING_SENDER, bc.blockchainAddress, MINING_REWARD)
 	nonce := bc.ProofOfWork()
