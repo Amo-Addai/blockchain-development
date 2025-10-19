@@ -1,0 +1,35 @@
+<html lang="en">
+    <head>
+        <meta charse="UTF-8">
+        <title>Wallet</title>
+        <script src="/jquery.min.js"></script>
+    </head>
+    <body>
+        <div>
+            <h1>Wallet</h1>
+            <div id="wallet_amount">0</div>
+            <button id="reload_wallet">Reload Wallet</button>
+
+            <p>Public Key</p>
+            <textarea id="public_key" rows="2" cols="100"></textarea>
+
+            <p>Private Key</p>
+            <textarea id="private_key" rows="1" cols="100"></textarea>
+
+            <p>Blockchain Address</p>
+            <textarea name="" id="blockchain_address" rows="1", cols="100"></textarea>
+        </div>
+        <div>
+            <h1>Send Money</h1>
+            <div id="address">
+                Address:
+                <textarea id="recipient_blockchain_address" rows="1" cols="100"></textarea>
+                <br />
+                Amount:
+                <textarea id="send_amount" rows="1" cols="100"></textarea>
+                <br />
+                <button id="send_money">Send</button>
+            </div>
+        </div>
+    </body>
+</html>
