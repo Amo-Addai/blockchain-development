@@ -1,0 +1,27 @@
+
+
+npm install --save @solana/web3.js
+
+- install solana, anchor, ..
+
+--
+
+solana --version - confirm installation
+
+cargo install spl-token-cli
+
+spl-token create-token --url devnet - create a token
+
+spl-token balance / mint [token-id] --url devnet
+
+spl-token authorize [token-id] mint --disable --url devnet
+
+spl-token mint [token-id] 1000 --url devnet - mint 1000 tokens
+
+spl-token burn [token-id] 100 --url devnet - burn 100 tokens
+
+anchor init some-dapp
+cd some-dapp/
+anchor build - build rust-solana project
+anchor test
+
